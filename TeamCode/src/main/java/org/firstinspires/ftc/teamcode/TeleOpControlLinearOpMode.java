@@ -95,9 +95,9 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
     private double FOOT_OFF_POWER = 0.0;
     private double footPower = FOOT_OFF_POWER;
 
-    private double CATAPULT_UP_POWER = -1.0;
-    private double CATAPULT_DOWN_POWER = 1.0;
-    private double CATAPULT_HOLD_POWER = 0.2;
+    private double CATAPULT_UP_POWER = -0.5;
+    private double CATAPULT_DOWN_POWER = 0.5;
+    private double CATAPULT_HOLD_POWER = 0;
 
     private enum CatapultModes {UP, DOWN, HOLD}
     private CatapultModes pivotMode;
@@ -114,7 +114,6 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
 
         // Initialize the hardware variables. Note that the strings used here must correspond
         // to the names assigned during the robot configuration
-        // step (using the FTC Robot Controller app on the phone).
 
         leftFrontDrive = hardwareMap.get(DcMotor.class, "left_front_drive");
         leftBackDrive = hardwareMap.get(DcMotor.class, "left_back_drive");
