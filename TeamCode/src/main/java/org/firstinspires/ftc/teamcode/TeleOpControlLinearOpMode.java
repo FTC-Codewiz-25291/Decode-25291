@@ -227,7 +227,7 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
             //      the setDirection() calls above.
             // Once the correct motors move in the correct direction re-comment this code.
 
-/*            leftFrontPower  = gamepad1.x ? 1.0 : 0.0;  // X gamepad
+            leftFrontPower  = gamepad1.x ? 1.0 : 0.0;  // X gamepad
             leftBackPower   = gamepad1.a ? 1.0 : 0.0;  // A gamepad
             rightFrontPower = gamepad1.y ? 1.0 : 0.0;  // Y gamepad
             rightBackPower  = gamepad1.b ? 1.0 : 0.0;  // B gamepad */
@@ -296,7 +296,7 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
             telemetry.addData("Foot Power", "%4.2f", foot.getPower());
             telemetry.addData("Foot MODE", "%s", footmode);
             telemetry.addData("Catapult1 Current/Target/power", "%d, %d, %4.2f",
-                    catapult1.getCurrentPosition(), catapult1.getTargetPosition(), catapult1.getPower());
+                    // catapult1.getCurrentPosition(), catapult1.getTargetPosition(), catapult1.getPower());
             telemetry.addData("Catapult2 Current/Target/power", "%d, %d, %4.2f",
                     catapult2.getCurrentPosition(), catapult2.getTargetPosition(), catapult2.getPower());
             telemetry.addData("Catapult MODE", "%s", catapult_mode_str);
