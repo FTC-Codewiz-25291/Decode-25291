@@ -32,6 +32,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 /*
@@ -86,7 +87,7 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
     // motor power 1 = 100% and 0.5 = 50%
     // negative values = reverse ex: -0.5 = reverse 50%
     private double INTAKE_IN_POWER = 1.0;
-    private double INTAKE_OUT_POWER = -0.9;
+    private double INTAKE_OUT_POWER = -1;
     private double INTAKE_OFF_POWER = 0.0;
     private double intakePower = INTAKE_OFF_POWER;
 
@@ -95,9 +96,9 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
     private double FOOT_OFF_POWER = 0.0;
     private double footPower = FOOT_OFF_POWER;
 
-    private double CATAPULT_UP_POWER = -0.5;
-    private double CATAPULT_DOWN_POWER = 0.5;
-    private double CATAPULT_HOLD_POWER = 0;
+    private double CATAPULT_UP_POWER = -0.8;
+    private double CATAPULT_DOWN_POWER = 0.8;
+    private double CATAPULT_HOLD_POWER = -0.5;
 
     private enum CatapultModes {UP, DOWN, HOLD}
     private CatapultModes pivotMode;
@@ -123,7 +124,7 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
         intake = hardwareMap.get(DcMotor.class, "intake");
         catapult1 = hardwareMap.get(DcMotor.class, "catapult1");
         catapult2 = hardwareMap.get(DcMotor.class, "catapult2");
-        foot = hardwareMap.get(DcMotor.class, "foot");
+        //foot = hardwareMap.get(DcMotor.class, "foot");
 
         // ########################################################################################
         // !!!            IMPORTANT Drive Information. Test your motor directions.            !!!!!
@@ -139,21 +140,21 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
 
         // set direction of wheel motors
         leftFrontDrive.setDirection(DcMotor.Direction.FORWARD);
-        leftBackDrive.setDirection(DcMotor.Direction.REVERSE);
+        leftBackDrive.setDirection(DcMotor.Direction.FORWARD);
         rightFrontDrive.setDirection(DcMotor.Direction.REVERSE);
-        rightBackDrive.setDirection(DcMotor.Direction.FORWARD);
+        rightBackDrive.setDirection(DcMotor.Direction.REVERSE);
 
         // set direction of subsystem motors
         intake.setDirection(DcMotor.Direction.FORWARD); // Forward should INTAKE.
         catapult1.setDirection(DcMotor.Direction.REVERSE); // Backwards should pivot DOWN, or in the stowed position.
         catapult2.setDirection(DcMotor.Direction.FORWARD);
-        foot.setDirection(DcMotor.Direction.REVERSE); // Backwards should should stay UP, or in the stowed position
+        //foot.setDirection(DcMotor.Direction.REVERSE); // Backwards should should stay UP, or in the stowed position
 
         // set initial subsystem behavior
         intake.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         catapult1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         catapult2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        foot.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        //foot.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         // Wait for the game to start (driver presses START)
         telemetry.addData("Status", "Initialized");
@@ -227,10 +228,10 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
             //      the setDirection() calls above.
             // Once the correct motors move in the correct direction re-comment this code.
 
-            leftFrontPower  = gamepad1.x ? 1.0 : 0.0;  // X gamepad
-            leftBackPower   = gamepad1.a ? 1.0 : 0.0;  // A gamepad
-            rightFrontPower = gamepad1.y ? 1.0 : 0.0;  // Y gamepad
-            rightBackPower  = gamepad1.b ? 1.0 : 0.0;  // B gamepad */
+//            leftFrontPower  = gamepad1.x ? 1.0 : 0.0;  // X gamepad
+//            leftBackPower   = gamepad1.a ? 1.0 : 0.0;  // A gamepad
+//            rightFrontPower = gamepad1.y ? 1.0 : 0.0;  // Y gamepad
+//        rightBackPower  = gamepad1.b ? 1.0 : 0.0;  // B gamepad */
 
             // INTAKE CODE
             if (intakeInButton) {
@@ -276,7 +277,7 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
             rightBackDrive.setPower(rightBackPower);
 
             intake.setPower(intakePower);
-            foot.setPower(footPower);
+            //foot.setPower(footPower);
 
             String catapult_mode_str;
             if (pivotMode == CatapultModes.UP) {
@@ -293,13 +294,15 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
             telemetry.addData("Front left/Right", "%4.2f, %4.2f", leftFrontPower, rightFrontPower);
             telemetry.addData("Back  left/Right", "%4.2f, %4.2f", leftBackPower, rightBackPower);
             telemetry.addData("Intake", "%%4.2f", intake.getPower());
-            telemetry.addData("Foot Power", "%4.2f", foot.getPower());
+            //telemetry.addData("Foot Power", "%4.2f", foot.getPower());
             telemetry.addData("Foot MODE", "%s", footmode);
-            telemetry.addData("Catapult1 Current/Target/power", "%d, %d, %4.2f",
-                    // catapult1.getCurrentPosition(), catapult1.getTargetPosition(), catapult1.getPower());
-            telemetry.addData("Catapult2 Current/Target/power", "%d, %d, %4.2f",
-                    catapult2.getCurrentPosition(), catapult2.getTargetPosition(), catapult2.getPower());
+            telemetry.addData("Catapult1 Current/Target/power", "%d, %d, %4.2f", catapult1.getCurrentPosition(), catapult1.getTargetPosition(), catapult1.getPower());
+            //telemetry.addData("Catapult2 Current/Target/power", "%d, %d, %4.2f");
+                    //catapult2.getCurrentPosition(), catapult2.getTargetPosition(), catapult2.getPower());
             telemetry.addData("Catapult MODE", "%s", catapult_mode_str);
+            telemetry.addData("axial", "%s", axial);
+            telemetry.addData("lateral", "%s", lateral);
+            telemetry.addData("yaw", "%s", yaw);
             telemetry.update();
         }
     }
