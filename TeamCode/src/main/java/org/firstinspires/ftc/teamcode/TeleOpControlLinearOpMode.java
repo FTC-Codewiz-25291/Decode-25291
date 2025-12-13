@@ -96,9 +96,9 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
     private double FOOT_OFF_POWER = 0.0;
     private double footPower = FOOT_OFF_POWER;
 
-    private double CATAPULT_UP_POWER = -0.8;
-    private double CATAPULT_DOWN_POWER = 0.8;
-    private double CATAPULT_HOLD_POWER = -0.5;
+    private double CATAPULT_UP_POWER = -1;
+    private double CATAPULT_DOWN_POWER = 1;
+    private double CATAPULT_HOLD_POWER = -0.2;
 
     private enum CatapultModes {UP, DOWN, HOLD}
     private CatapultModes pivotMode;
@@ -175,8 +175,8 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
             // POV Mode uses left joystick to go forward & strafe, and right joystick to rotate.
             //axial = speed, lateral = turn, yaw = strafe
             double axial = -gamepad1.left_stick_y;  // Note: pushing stick forward gives negative value
-            double lateral = -gamepad1.right_stick_x;
-            double yaw = -gamepad1.left_stick_x;
+            double lateral = gamepad1.left_stick_x;
+            double yaw = gamepad1.right_stick_x;
 
             boolean intakeInButton = gamepad1.left_trigger > 0.2;
             boolean intakeOutButton = gamepad1.left_bumper;
