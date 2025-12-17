@@ -91,7 +91,7 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
     private double INTAKE_OFF_POWER = 0.0;
     private double intakePower = INTAKE_OFF_POWER;
 
-    private double FOOT_UP_POWER = 1.0;
+    private double FOOT_UP_POWER = 0.85;
     private double FOOT_DOWN_POWER = -0.85;
     private double FOOT_OFF_POWER = 0.0;
     private double footPower = FOOT_OFF_POWER;
@@ -124,7 +124,7 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
         intake = hardwareMap.get(DcMotor.class, "intake");
         catapult1 = hardwareMap.get(DcMotor.class, "catapult1");
         catapult2 = hardwareMap.get(DcMotor.class, "catapult2");
-        //foot = hardwareMap.get(DcMotor.class, "foot");
+        foot = hardwareMap.get(DcMotor.class, "foot");
 
         // ########################################################################################
         // !!!            IMPORTANT Drive Information. Test your motor directions.            !!!!!
@@ -245,13 +245,13 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
             // FOOT CODE
             if (footOutButton) {
                 footmode = FootMode.DOWN;
-                footPower = FOOT_DOWN_POWER;
+                footPower = -0.85;
             } else if (footUpButton) {
                 footmode = FootMode.UP;
-                footPower = FOOT_UP_POWER;
+                footPower = 0.85;
             } else {
                 footmode = FootMode.BRAKE;
-                footPower = FOOT_OFF_POWER;
+                footPower = 0.0;
             }
 
             // Determine pivot mode
@@ -277,7 +277,7 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
             rightBackDrive.setPower(rightBackPower);
 
             intake.setPower(intakePower);
-            //foot.setPower(footPower);
+            foot.setPower(footPower);
 
             String catapult_mode_str;
             if (pivotMode == CatapultModes.UP) {
