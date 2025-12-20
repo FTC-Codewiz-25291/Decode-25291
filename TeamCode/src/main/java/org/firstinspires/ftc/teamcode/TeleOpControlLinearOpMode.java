@@ -97,6 +97,8 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
     private double footPower = FOOT_OFF_POWER;
 
     private double CATAPULT_UP_POWER = -1;
+    private double CATAPULT_UP_POWER_TWO_BALLS = -0.8;
+    private double CATAPULT_UP_POWER_ONE_BALLS = -0.6;
     private double CATAPULT_DOWN_POWER = 1;
     private double CATAPULT_HOLD_POWER = -0.2;
 
@@ -186,16 +188,22 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
                 intakeInButton = false;
             }
 
-            boolean footOutButton = gamepad1.a;
-            boolean footUpButton = gamepad1.b;
+            boolean footOutButton = gamepad1.dpad_down;
+            boolean footUpButton = gamepad1.dpad_up;
             if (footOutButton && footUpButton) {
                 footOutButton = false;
             }
 
             boolean catapultUpButton = gamepad1.right_bumper;
+            boolean catapultUpButtonOneBall = gamepad1.a;
+            boolean catapultUpButtonTwoBall = gamepad1.b;
+            boolean catapultUpButtonThreeBall = gamepad1.y;
             boolean catapultDownButton = gamepad1.right_trigger > 0.2;
-            if (catapultUpButton && catapultDownButton) {
+            if ((catapultUpButton || catapultUpButtonOneBall || catapultUpButtonTwoBall || catapultUpButtonThreeBall) && catapultDownButton) {
                 catapultUpButton = false;
+                catapultUpButtonOneBall = false;
+                catapultUpButtonTwoBall = false;
+                catapultUpButtonThreeBall = false;
             }
 
             // DRIVE CODE
@@ -245,20 +253,32 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
             // FOOT CODE
             if (footOutButton) {
                 footmode = FootMode.DOWN;
-                footPower = -0.85;
+                footPower = FOOT_DOWN_POWER;
             } else if (footUpButton) {
                 footmode = FootMode.UP;
-                footPower = 0.85;
+                footPower = FOOT_UP_POWER;
             } else {
                 footmode = FootMode.BRAKE;
-                footPower = 0.0;
+                footPower = FOOT_OFF_POWER;
             }
 
             // Determine pivot mode
-            if (catapultUpButton) {
+            if (catapultUpButton ) {
                 pivotMode = CatapultModes.UP;
                 catapult1.setPower(CATAPULT_UP_POWER);
                 catapult2.setPower(CATAPULT_UP_POWER);
+            } else if (catapultUpButtonThreeBall) {
+                pivotMode = CatapultModes.UP;
+                catapult1.setPower(-CATAPULT_UP_POWER);
+                catapult2.setPower(-CATAPULT_UP_POWER);
+            } else if (catapultUpButtonTwoBall) {
+                pivotMode = CatapultModes.UP;
+                catapult1.setPower(-CATAPULT_UP_POWER_TWO_BALLS);
+                catapult2.setPower(-CATAPULT_UP_POWER_TWO_BALLS);
+            } else if (catapultUpButtonOneBall) {
+                pivotMode = CatapultModes.UP;
+                catapult1.setPower(-CATAPULT_UP_POWER_ONE_BALLS);
+                catapult2.setPower(-CATAPULT_UP_POWER_ONE_BALLS);
             } else if (catapultDownButton) {
                 pivotMode = CatapultModes.DOWN;
                 catapult1.setPower(CATAPULT_DOWN_POWER);
