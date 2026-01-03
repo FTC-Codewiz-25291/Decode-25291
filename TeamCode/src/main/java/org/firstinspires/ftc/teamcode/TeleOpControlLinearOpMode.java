@@ -152,6 +152,12 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
         catapult2.setDirection(DcMotor.Direction.FORWARD);
         //foot.setDirection(DcMotor.Direction.REVERSE); // Backwards should should stay UP, or in the stowed position
 
+        // set initial wheel motor behavior
+        leftFrontDrive.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        leftBackDrive.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        rightFrontDrive.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        rightBackDrive.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
         // set initial subsystem behavior
         intake.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         catapult1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
