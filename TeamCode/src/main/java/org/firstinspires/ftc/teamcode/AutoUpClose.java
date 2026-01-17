@@ -6,8 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous(name="Robot: Auto Drive Up Close", group="Robot")
-@Disabled
+@Autonomous(name="Robot: Auto Drive Up Close", group="Autonomous")
 public class AutoUpClose extends LinearOpMode {
 
     private DcMotor leftFrontDrive = null;
@@ -34,8 +33,6 @@ public class AutoUpClose extends LinearOpMode {
         catapult1 = hardwareMap.get(DcMotor.class, "catapult1");
         catapult2 = hardwareMap.get(DcMotor.class, "catapult2");
 
-        waitForStart();
-
         leftFrontDrive.setDirection(DcMotor.Direction.FORWARD);
         leftBackDrive.setDirection(DcMotor.Direction.FORWARD);
         rightFrontDrive.setDirection(DcMotor.Direction.REVERSE);
@@ -54,13 +51,25 @@ public class AutoUpClose extends LinearOpMode {
         catapult1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         catapult2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        catapult1.setPower(-1);
-        catapult2.setPower(-1);
 
-        sleep(1000);
+        waitForStart();
 
         catapult1.setPower(1);
         catapult2.setPower(1);
+        sleep(500);
+        catapult1.setPower(-0.2);
+        catapult2.setPower(-0.2);
+
+        sleep(2000);
+
+        catapult1.setPower(-1);
+        catapult2.setPower(-1);
+
+        sleep(2000);
+
+        catapult1.setPower(1);
+        catapult2.setPower(1);
+        sleep(500);
         catapult1.setPower(-0.2);
         catapult2.setPower(-0.2);
 
@@ -69,7 +78,19 @@ public class AutoUpClose extends LinearOpMode {
         rightFrontDrive.setPower(-0.6);
         rightBackDrive.setPower(-0.6);
 
-        sleep(2000);
+        sleep(1250);
+
+        leftFrontDrive.setPower(-0.6);
+        leftBackDrive.setPower(-0.6);
+        rightFrontDrive.setPower(0.6);
+        rightBackDrive.setPower(0.6);
+
+//        leftFrontDrive.setPower(-0.6);
+//        leftBackDrive.setPower(0.6);
+//        rightFrontDrive.setPower(0.6);
+//        rightBackDrive.setPower(-0.6);
+
+        sleep(375);
 
         leftFrontDrive.setPower(0);
         leftBackDrive.setPower(0);
