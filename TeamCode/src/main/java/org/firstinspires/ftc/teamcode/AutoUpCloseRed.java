@@ -6,8 +6,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous(name="Robot: Auto Drive Up Close Blue Side", group="Autonomous")
-public class AutoUpClose extends LinearOpMode {
+@Autonomous(name="Robot: Auto Drive Up Close Red Side", group="Autonomous")
+public class AutoUpCloseRed extends LinearOpMode {
 
     private DcMotor leftFrontDrive = null;
     private DcMotor leftBackDrive = null;
@@ -70,8 +70,6 @@ public class AutoUpClose extends LinearOpMode {
         rightFrontDrive.setPower(0);
         rightBackDrive.setPower(0);
 
-        sleep(100);
-
         catapult1.setPower(1);
         catapult2.setPower(1);
         sleep(500);
@@ -98,10 +96,10 @@ public class AutoUpClose extends LinearOpMode {
 
         sleep(1250);
 
-        leftFrontDrive.setPower(-0.6);
-        leftBackDrive.setPower(-0.6);
-        rightFrontDrive.setPower(0.6);
-        rightBackDrive.setPower(0.6);
+        leftFrontDrive.setPower(0.6);
+        leftBackDrive.setPower(0.6);
+        rightFrontDrive.setPower(-0.6);
+        rightBackDrive.setPower(-0.6);
 
 //        leftFrontDrive.setPower(-0.6);
 //        leftBackDrive.setPower(0.6);
@@ -119,8 +117,26 @@ public class AutoUpClose extends LinearOpMode {
 
         sleep(4000);
 
+        leftFrontDrive.setPower(-0.4);
+        leftBackDrive.setPower(-0.4);
+        rightFrontDrive.setPower(-0.4);
+        rightBackDrive.setPower(-0.4);
 
+        sleep(1500);
 
+        leftFrontDrive.setPower(-0.6);
+        leftBackDrive.setPower(-0.6);
+        rightFrontDrive.setPower(0.6);
+        rightBackDrive.setPower(0.6);
+
+        sleep(325);
+
+        leftFrontDrive.setPower(0);
+        leftBackDrive.setPower(0);
+        rightFrontDrive.setPower(0);
+        rightBackDrive.setPower(0);
+
+        sleep(100);
     }
 
 }

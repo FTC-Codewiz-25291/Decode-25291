@@ -96,9 +96,9 @@ public class TeleOpControlLinearOpMode extends LinearOpMode {
     private double FOOT_OFF_POWER = 0.0;
     private double footPower = FOOT_OFF_POWER;
 
-    private double CATAPULT_UP_POWER = -1;
-    private double CATAPULT_UP_POWER_TWO_BALLS = -0.8;
-    private double CATAPULT_UP_POWER_ONE_BALLS = -0.6;
+    private double CATAPULT_UP_POWER = -0.95;
+    private double CATAPULT_UP_POWER_TWO_BALLS = -0.7;
+    private double CATAPULT_UP_POWER_ONE_BALLS = -0.5;
     private double CATAPULT_DOWN_POWER = 1;
     private double CATAPULT_HOLD_POWER = -0.2;
 

@@ -22,11 +22,12 @@ public class TaxiAuto extends LinearOpMode {
         rightFrontDrive = hardwareMap.get(DcMotor.class, "right_front_drive");
         rightBackDrive  = hardwareMap.get(DcMotor.class, "right_back_drive");
 
+
         // Same directions as TeleOp
         leftFrontDrive.setDirection(DcMotor.Direction.FORWARD);
-        leftBackDrive.setDirection(DcMotor.Direction.REVERSE);
+        leftBackDrive.setDirection(DcMotor.Direction.FORWARD);
         rightFrontDrive.setDirection(DcMotor.Direction.REVERSE);
-        rightBackDrive.setDirection(DcMotor.Direction.FORWARD);
+        rightBackDrive.setDirection(DcMotor.Direction.REVERSE);
 
         // Optional: brake when power = 0
         leftFrontDrive.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -41,8 +42,8 @@ public class TaxiAuto extends LinearOpMode {
 
         if (opModeIsActive()) {
             // Tiny forward move for taxi
-            double drivePower = 0.2;     // small power
-            long driveTimeMs = 300;      // short duration
+            double drivePower = 0.5;     // small power
+            long driveTimeMs = 1000;      // short duration
 
             // Drive forward
             leftFrontDrive.setPower(drivePower);
