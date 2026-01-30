@@ -108,16 +108,23 @@ public class AutoUpClose extends LinearOpMode {
 //        rightFrontDrive.setPower(0.6);
 //        rightBackDrive.setPower(-0.6);
 
-        sleep(325);
+        sleep(320);
+
+        leftFrontDrive.setPower(-0.6);
+        leftBackDrive.setPower(0.6);
+        rightFrontDrive.setPower(0.6);
+        rightBackDrive.setPower(-0.6);
+
+        sleep(375);
 
         intake.setPower(-1);
 
-        leftFrontDrive.setPower(0.4);
-        leftBackDrive.setPower(0.4);
-        rightFrontDrive.setPower(0.4);
-        rightBackDrive.setPower(0.4);
+        leftFrontDrive.setPower(0.35);
+        leftBackDrive.setPower(0.35);
+        rightFrontDrive.setPower(0.35);
+        rightBackDrive.setPower(0.35);
 
-        sleep(4000);
+        sleep(5000);
 
 
 
