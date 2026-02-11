@@ -144,40 +144,40 @@ public class AutoUpClose extends LinearOpMode {
 
         sleep(5000);
 
-        leftFrontDrive.setPower(-0.35);
-        leftBackDrive.setPower(-0.35);
-        rightFrontDrive.setPower(-0.35);
-        rightBackDrive.setPower(-0.35);
-
-        sleep(2000);
-
-        leftFrontDrive.setPower(0.6);
-        leftBackDrive.setPower(-0.6);
-        rightFrontDrive.setPower(-0.6);
-        rightBackDrive.setPower(0.6);
-
-        sleep(375);
-
-        leftFrontDrive.setPower(0.6);
-        leftBackDrive.setPower(0.6);
-        rightFrontDrive.setPower(-0.6);
-        rightBackDrive.setPower(-0.6);
-
-        sleep(320);
-
-        leftFrontDrive.setPower(0.6);
-        leftBackDrive.setPower(0.6);
-        rightFrontDrive.setPower(0.6);
-        rightBackDrive.setPower(0.6);
-
-        sleep(1250);
-
-        leftFrontDrive.setPower(-0.4);
-        leftBackDrive.setPower(-0.4);
-        rightFrontDrive.setPower(-0.4);
-        rightBackDrive.setPower(-0.4);
-
-        sleep(350);
+//        leftFrontDrive.setPower(-0.35);
+//        leftBackDrive.setPower(-0.35);
+//        rightFrontDrive.setPower(-0.35);
+//        rightBackDrive.setPower(-0.35);
+//
+//        sleep(2000);
+//
+//        leftFrontDrive.setPower(0.6);
+//        leftBackDrive.setPower(-0.6);
+//        rightFrontDrive.setPower(-0.6);
+//        rightBackDrive.setPower(0.6);
+//
+//        sleep(375);
+//
+//        leftFrontDrive.setPower(0.6);
+//        leftBackDrive.setPower(0.6);
+//        rightFrontDrive.setPower(-0.6);
+//        rightBackDrive.setPower(-0.6);
+//
+//        sleep(320);
+//
+//        leftFrontDrive.setPower(0.6);
+//        leftBackDrive.setPower(0.6);
+//        rightFrontDrive.setPower(0.6);
+//        rightBackDrive.setPower(0.6);
+//
+//        sleep(1250);
+//
+//        leftFrontDrive.setPower(-0.4);
+//        leftBackDrive.setPower(-0.4);
+//        rightFrontDrive.setPower(-0.4);
+//        rightBackDrive.setPower(-0.4);
+//
+//        sleep(350);
 
     }
 
