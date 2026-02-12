@@ -94,15 +94,6 @@ public class AutoUpClose extends LinearOpMode {
 
         sleep(2000);
 
-
-//        catapult1.setPower(1);
-//        catapult2.setPower(1);
-//        sleep(500);
-//        catapult1.setPower(-0.2);
-//        catapult2.setPower(-0.2);
-//
-//        sleep(2000);
-
         leftFrontDrive.setPower(-0.6); //reverse robot
         leftBackDrive.setPower(-0.6);
         rightFrontDrive.setPower(-0.6);
@@ -115,11 +106,6 @@ public class AutoUpClose extends LinearOpMode {
         rightFrontDrive.setPower(0.6);
         rightBackDrive.setPower(0.6);
 
-//        leftFrontDrive.setPower(-0.6);
-//        leftBackDrive.setPower(0.6);
-//        rightFrontDrive.setPower(0.6);
-//        rightBackDrive.setPower(-0.6);
-
         sleep(320);
 
         leftFrontDrive.setPower(-0.6); // strafe robot
@@ -128,21 +114,6 @@ public class AutoUpClose extends LinearOpMode {
         rightBackDrive.setPower(-0.6);
 
         sleep(375); // prev. 375
-
-//        catapult1.setPower(-1);
-//        catapult2.setPower(-1);
-//
-//        sleep(2000);
-//
-//        catapult1.setPower(1);
-//        catapult2.setPower(1);
-//        sleep(500);
-//        catapult1.setPower(-0.2);
-//        catapult2.setPower(-0.2);
-//
-//        sleep(2000);
-
-
 
         intake.setPower(-1);
 
