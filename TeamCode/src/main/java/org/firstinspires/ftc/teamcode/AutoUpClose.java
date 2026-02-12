@@ -94,14 +94,23 @@ public class AutoUpClose extends LinearOpMode {
 
         sleep(2000);
 
-        leftFrontDrive.setPower(-0.6);
+
+//        catapult1.setPower(1);
+//        catapult2.setPower(1);
+//        sleep(500);
+//        catapult1.setPower(-0.2);
+//        catapult2.setPower(-0.2);
+//
+//        sleep(2000);
+
+        leftFrontDrive.setPower(-0.6); //reverse robot
         leftBackDrive.setPower(-0.6);
         rightFrontDrive.setPower(-0.6);
         rightBackDrive.setPower(-0.6);
 
         sleep(1250);
 
-        leftFrontDrive.setPower(-0.6);
+        leftFrontDrive.setPower(-0.6); // turn robot
         leftBackDrive.setPower(-0.6);
         rightFrontDrive.setPower(0.6);
         rightBackDrive.setPower(0.6);
@@ -113,12 +122,12 @@ public class AutoUpClose extends LinearOpMode {
 
         sleep(320);
 
-        leftFrontDrive.setPower(-0.6);
+        leftFrontDrive.setPower(-0.6); // strafe robot
         leftBackDrive.setPower(0.6);
         rightFrontDrive.setPower(0.6);
         rightBackDrive.setPower(-0.6);
 
-        sleep(375);
+        sleep(375); // prev. 375
 
 //        catapult1.setPower(-1);
 //        catapult2.setPower(-1);
@@ -137,47 +146,74 @@ public class AutoUpClose extends LinearOpMode {
 
         intake.setPower(-1);
 
-        leftFrontDrive.setPower(0.35);
-        leftBackDrive.setPower(0.35);
-        rightFrontDrive.setPower(0.35);
-        rightBackDrive.setPower(0.35);
+        leftFrontDrive.setPower(0.2); // drive forward
+        leftBackDrive.setPower(0.2);
+        rightFrontDrive.setPower(0.2);
+        rightBackDrive.setPower(0.2);
 
-        sleep(5000);
+        sleep(5700);
 
-//        leftFrontDrive.setPower(-0.35);
-//        leftBackDrive.setPower(-0.35);
-//        rightFrontDrive.setPower(-0.35);
-//        rightBackDrive.setPower(-0.35);
-//
-//        sleep(2000);
-//
-//        leftFrontDrive.setPower(0.6);
-//        leftBackDrive.setPower(-0.6);
-//        rightFrontDrive.setPower(-0.6);
-//        rightBackDrive.setPower(0.6);
-//
-//        sleep(375);
-//
-//        leftFrontDrive.setPower(0.6);
-//        leftBackDrive.setPower(0.6);
-//        rightFrontDrive.setPower(-0.6);
-//        rightBackDrive.setPower(-0.6);
-//
-//        sleep(320);
-//
-//        leftFrontDrive.setPower(0.6);
-//        leftBackDrive.setPower(0.6);
-//        rightFrontDrive.setPower(0.6);
-//        rightBackDrive.setPower(0.6);
-//
-//        sleep(1250);
-//
-//        leftFrontDrive.setPower(-0.4);
-//        leftBackDrive.setPower(-0.4);
-//        rightFrontDrive.setPower(-0.4);
-//        rightBackDrive.setPower(-0.4);
-//
-//        sleep(350);
+        leftFrontDrive.setPower(-0.35);
+        leftBackDrive.setPower(-0.35);
+        rightFrontDrive.setPower(-0.35);
+        rightBackDrive.setPower(-0.35);
+
+        sleep(2000);
+
+        leftFrontDrive.setPower(0.6);
+        leftBackDrive.setPower(-0.6);
+        rightFrontDrive.setPower(-0.6);
+        rightBackDrive.setPower(0.6);
+
+        sleep(375);
+
+        leftFrontDrive.setPower(0.6);
+        leftBackDrive.setPower(0.6);
+        rightFrontDrive.setPower(-0.6);
+        rightBackDrive.setPower(-0.6);
+
+        sleep(320);
+
+        leftFrontDrive.setPower(0.6);
+        leftBackDrive.setPower(0.6);
+        rightFrontDrive.setPower(0.6);
+        rightBackDrive.setPower(0.6);
+
+        sleep(1250);
+
+        leftFrontDrive.setPower(-0.4);
+        leftBackDrive.setPower(-0.4);
+        rightFrontDrive.setPower(-0.4);
+        rightBackDrive.setPower(-0.4);
+
+        sleep(350);
+
+        leftFrontDrive.setPower(0);
+        leftBackDrive.setPower(0);
+        rightFrontDrive.setPower(0);
+        rightBackDrive.setPower(0);
+
+        sleep(100);
+
+        catapult1.setPower(-1);
+        catapult2.setPower(-1);
+
+        sleep(2000);
+
+        catapult1.setPower(1);
+        catapult2.setPower(1);
+        sleep(500);
+        catapult1.setPower(-0.2);
+        catapult2.setPower(-0.2);
+
+        sleep(2000);
+
+        leftFrontDrive.setPower(-0.6); // strafe robot
+        leftBackDrive.setPower(0.6);
+        rightFrontDrive.setPower(0.6);
+        rightBackDrive.setPower(-0.6);
+
+        sleep(1000);
 
     }
 
